@@ -11,10 +11,10 @@ const middlewares = jsonServer.defaults();
 
 server.use(cors());
 server.use(jsonServer.bodyParser);
-// server.use(middlewares);
-// server.use(router);
+server.use(middlewares);
+server.use(router);
 
-server.use("/db", middlewares, router);
+// server.use("/db", middlewares, router);
 server.use(express.static(path.join(__dirname, "build")));
 
 server.get("/*", function (req, res) {
