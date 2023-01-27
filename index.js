@@ -17,7 +17,7 @@ server.use(jsonServer.bodyParser);
 server.use("/db", middlewares, router);
 server.use(express.static(path.join(__dirname, "build")));
 
-server.get("/", function (req, res) {
+server.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
